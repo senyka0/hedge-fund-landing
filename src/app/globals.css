@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body::-webkit-scrollbar {
+  display: none;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.shadow {
+  fill: #c1cafe;
+  transition:
+    fill 0.5s ease,
+    filter 0.5s ease;
+}
+.shadow:hover {
+  -webkit-filter: drop-shadow(0px 0px 8px rgba(176, 194, 255, 0.25));
+  filter: drop-shadow(0px 0px 8px rgba(176, 194, 255, 0.25));
+  fill: #5771fb;
+}
+
+.animated-border-box-glow {
+  position: absolute;
+  overflow: hidden;
+  z-index: 0;
+  border-radius: 1px;
+}
+
+.animated-border-box-glow {
+  overflow: hidden;
+  filter: blur(10px);
+}
+
+.animated-border-box-glow:before {
+  content: "";
+  z-index: -2;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(0deg);
+  position: absolute;
+  width: 99999px;
+  height: 99999px;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-image: conic-gradient(rgba(0, 0, 0, 0), #bddffe, rgba(0, 0, 0, 0) 10%);
+  animation: rotate 15s linear infinite;
+}
+
+@keyframes rotate {
+  100% {
+    transform: translate(-50%, -50%) rotate(1turn);
+  }
+}
+
+.left-gradient {
+  animation: move-right-left 3s infinite ease-in alternate;
+}
+
+.right-gradient {
+  animation: move-left-right 3s infinite ease-in alternate;
+}
+
+@keyframes move-right-left {
+  from {
+    left: 82%;
+    top: 30%;
+  }
+  to {
+    left: 20%;
+    top: 50%;
+  }
+}
+@keyframes move-left-right {
+  from {
+    left: -20%;
+    top: 30%;
+  }
+  to {
+    left: 9%;
+    top: 0%;
+  }
+}
