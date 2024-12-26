@@ -9,6 +9,8 @@ services:
     restart: always
     environment:
       - NODE_ENV=production
+      - ENZYME_API_TOKEN=${ENZYME_API_TOKEN}
+      - ENZYME_VAULT_ADDRESS=${ENZYME_VAULT_ADDRESS}
     networks:
       - web
 
