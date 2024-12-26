@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+  hedge-fund-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: hedge-fund-app
+    restart: always
+    environment:
+      - NODE_ENV=production
+    networks:
+      - web
+
+  nginx:
+    image: nginx:alpine
+    container_name: nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - hedge-fund-app
+    networks:
+      - web
+
+networks:
+  web:
+    external: true 
