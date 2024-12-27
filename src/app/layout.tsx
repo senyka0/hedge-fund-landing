@@ -6,6 +6,9 @@ const nunito = Nunito({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "AlgoZeus",
+  icons: {
+    icon: "favicon.ico",
+  },
   description:
     "Subscriptions to quantitative trading portfolios that are designed to outperform crypto markets",
 };

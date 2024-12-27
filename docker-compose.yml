@@ -8,9 +8,11 @@ services:
     container_name: hedge-fund-app
     restart: always
     environment:
-      - NODE_ENV=production
+      - NODE_ENV=development
       - ENZYME_API_TOKEN=${ENZYME_API_TOKEN}
       - ENZYME_VAULT_ADDRESS=${ENZYME_VAULT_ADDRESS}
+    volumes:
+      - ./public:/app/public
     networks:
       - web
 

@@ -27,7 +27,7 @@ export default function Dashboard({ data = [] }: DataProps) {
         <div className="z-10 w-full h-full">
           <Image
             className="border-[1px] border-[#4A4A61] rounded-[39px] object-cover object-center w-full h-full"
-            src="/portfolio.svg"
+            src="/hedge-fund-landing/portfolio.svg"
             alt="Portfolio"
             layout="fill"
             priority
